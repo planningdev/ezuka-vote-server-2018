@@ -1,3 +1,5 @@
 class VoteToken < ApplicationRecord
-  validates :token, presence: true, uniqueness: true
+  has_secure_token
+
+  validates :token, uniqueness: true
 end
