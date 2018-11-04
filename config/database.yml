@@ -53,7 +53,7 @@ test:
 #
 production:
   <<: *default
-  host: <%= Rails.application.credentials.db_config[:host]
+  host: <%= Rails.application.credentials.db_config[:host] %>
   database: <%= Rails.application.credentials.db_config[:database] %>
   username: <%= Rails.application.credentials.db_config[:username] %>
   password: <%= Rails.application.credentials.db_config[:password] %>
