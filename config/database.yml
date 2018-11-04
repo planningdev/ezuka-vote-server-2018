@@ -15,7 +15,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
+  charset: utf8mb4
+  encoding: utf8mb4
+  collation: utf8mb4_bin
   socket: /tmp/mysql.sock
+  table_options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=4'
 
 development:
   <<: *default
