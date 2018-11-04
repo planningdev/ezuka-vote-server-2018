@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  include CipherConcern
+
   validates :title, presence: true, length: { maximum: 60 }
   validates :team_name, presence: true, length: { maximum: 60 }
   validates :description, length: { maximum: 400 }
