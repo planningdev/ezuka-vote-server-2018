@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :apps, only: %i(index) do
         resource :vote, only: %i(create), module: :apps
       end
-      resources :ideas, only: %i(index)
+      resources :ideas, only: %i(index) do
+        resource :vote, only: %i(create), module: :ideas
+      end
     end
   end
 end
