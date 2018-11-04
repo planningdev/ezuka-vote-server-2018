@@ -43,6 +43,12 @@ gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'swagger-docs'
 gem 'grape-swagger-rails'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+
+# QRコード生成
+gem 'rqrcode'
+gem 'rqrcode_png'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
