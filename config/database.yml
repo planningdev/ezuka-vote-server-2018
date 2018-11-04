@@ -53,6 +53,6 @@ test:
 #
 production:
   <<: *default
-  database: VoteApp2018_production
-  username: VoteApp2018
-  password: <%= ENV['VOTEAPP2018_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db_config[:database] %>
+  username: <%= Rails.application.credentials.db_config[:username] %>
+  password: <%= Rails.application.credentials.db_config[:password] %>
