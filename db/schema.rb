@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_053126) do
+ActiveRecord::Schema.define(version: 2018_11_04_013928) do
 
-  create_table "vote_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "type"
+    t.string "title", null: false
+    t.string "team_name", null: false
+    t.string "description", limit: 1600
+    t.integer "receipt_number", null: false, unsigned: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receipt_number"], name: "index_products_on_receipt_number", unique: true
+  end
+
+  create_table "vote_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
