@@ -8,6 +8,8 @@ module Api
 
         def create
           current_vote_token.build_idea_vote(voteable: @idea).save!
+
+          render json: {status: "ok"}
         end
 
         private
