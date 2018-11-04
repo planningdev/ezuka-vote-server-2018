@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_04_022353) do
+ActiveRecord::Schema.define(version: 2018_11_04_053322) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "image", null: false
@@ -39,4 +39,17 @@ ActiveRecord::Schema.define(version: 2018_11_04_022353) do
     t.index ["token"], name: "index_vote_tokens_on_token", unique: true
   end
 
+  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "type", null: false
+    t.string "voteable_type"
+    t.bigint "voteable_id"
+    t.bigint "vote_token_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vote_token_id"], name: "index_votes_on_vote_token_id"
+    t.index ["voteable_type", "vote_token_id"], name: "index_votes_on_voteable_type_and_vote_token_id", unique: true
+    t.index ["voteable_type", "voteable_id"], name: "index_votes_on_voteable_type_and_voteable_id"
+  end
+
+  add_foreign_key "votes", "vote_tokens"
 end
