@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :vote_tokens, only: %i(show), param: :token
+      resources :apps, only: %i(index)
     end
   end
 end
