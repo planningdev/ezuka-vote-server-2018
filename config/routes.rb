@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount GrapeSwaggerRails::Engine => "/swagger"
+  resources :apps, only: %i(index show), param: :encrypted_id
 
   namespace :api do
     namespace :v1 do
