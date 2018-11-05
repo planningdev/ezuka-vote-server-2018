@@ -14,9 +14,9 @@ class AppsController < ApplicationController
 
   def update
     if @app.update(app_params)
-      redirect_to @app
+      redirect_to edit_app_path(@app), success: '更新しました。'
     else
-      render 'edit', alert: 'エラーがあります。'
+      render 'edit'
     end
   end
 
