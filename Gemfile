@@ -45,6 +45,7 @@ gem 'swagger-docs'
 gem 'grape-swagger-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'cocoon'
 
 # QRコード生成
 gem 'rqrcode'
