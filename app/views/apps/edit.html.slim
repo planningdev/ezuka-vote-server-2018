@@ -25,7 +25,7 @@
         | (画像は4枚までです。)
       = form.fields_for :images do |image_form|
         = render 'image_fields', f: image_form
-    .field
-      = link_to_add_association '画像追加', form, :images
+      .field
+        = link_to_add_association '画像追加', form, :images, data: { associaltion_insertion_method: 'append' }
     .form-group.text-center
       = form.submit class: 'btn btn-primary'
