@@ -8,3 +8,9 @@ ja:
         team_name: チーム名（出場者名）
         description: 説明
         images: 画像
+    errors:
+      models:
+        app:
+          attributes:
+            images:
+              too_long: "は%{count}個までしか登録できません。"

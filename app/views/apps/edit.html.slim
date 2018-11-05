@@ -1,0 +1,31 @@
+.container.pt-5
+  = form_with model: @app, local: true do |form|
+
+    - if @app.errors.any?
+      .alert.alert-danger
+        ul
+          - @app.errors.full_messages.each do |msg|
+            li =msg
+    .form-group
+      = form.label :team_name
+      = form.text_field :team_name, class: 'form-control',disabled: true
+    .form-group
+      = form.label :title
+      small
+        | (60文字以内)
+      = form.text_field :title, class: 'form-control'
+    .form-group
+      = form.label :description
+      small
+        | (400文字以内)
+      = form.text_area :description, class: 'form-control'
+    .form-group
+      = form.label :images
+      small
+        | (画像は4枚までです。)
+      = form.fields_for :images do |image_form|
+        = render 'image_fields', f: image_form
+    .field
+      = link_to_add_association '画像追加', form, :images
+    .form-group.text-center
+      = form.submit class: 'btn btn-primary'
