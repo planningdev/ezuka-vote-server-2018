@@ -1,0 +1,26 @@
+.container-fluid
+  table.table
+    colgroup
+      col width=100
+      col width=400
+      col width=200
+      col width='auto'
+      col width=100
+      col width=50
+    thead
+      tr
+        td 受付番号
+        td アプリ名
+        td チーム名
+        td 概要
+        td 画像数
+        td
+    tbody
+      - @apps.each do |app|
+        tr
+          td = app.receipt_number
+          td = app.title
+          td = app.team_name
+          td = app.description
+          td = app.images.size
+          td = link_to '編集', edit_app_path(app.encrypted_id)

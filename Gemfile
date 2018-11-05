@@ -22,10 +22,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'slim'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -42,6 +43,13 @@ gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'swagger-docs'
 gem 'grape-swagger-rails'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+gem 'cocoon'
+
+# QRコード生成
+gem 'rqrcode'
+gem 'rqrcode_png'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
