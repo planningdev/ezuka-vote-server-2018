@@ -31,6 +31,6 @@ class AppsController < ApplicationController
   end
 
   def app_params
-    params.require(:app).permit(:title, :description, images_attributes: %i(id image image_cache _destroy))
+    params.require(:app).permit(:title, :description, :square_image,  :square_image_cache, images_attributes: %i(id image image_cache _destroy))
   end
 end
