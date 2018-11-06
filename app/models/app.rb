@@ -1,5 +1,4 @@
 class App < Product
-  validates :images, presence: true, length: { maximum: 4 }
 
   has_many :images, as: :imageable
 

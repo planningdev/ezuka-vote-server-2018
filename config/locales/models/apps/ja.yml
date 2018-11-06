@@ -7,6 +7,7 @@ ja:
         title: アプリ名
         team_name: チーム名（出場者名）
         description: 説明
+        square_image: 'アイコン画像'
         images: 画像
     errors:
       models:

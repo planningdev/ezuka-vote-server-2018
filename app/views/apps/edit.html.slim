@@ -19,6 +19,17 @@
       small
         | (400文字以内)
       = form.text_area :description, class: 'form-control'
+    .from-group
+      .row
+        .col-sm-7
+          = form.label :square_image
+          small
+            | (正方形に切り取られます。)
+          = form.hidden_field :square_image_cache, class: 'form-control'
+          = form.file_field :square_image, class: 'form-control'
+        .col-sm-1
+        .col-sm-4
+          = image_tag form.object.square_image_url, width: '80%'
     .form-group
       = form.label :images
       small
