@@ -4,7 +4,11 @@ class AppsController < ApplicationController
   before_action :set_app, only: %i(show edit update )
 
   def index
-  end
+    respond_to do |format|
+      format.html
+      format.csv
+      end
+    end
 
   def show
   end
