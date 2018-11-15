@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :apps, only: %i(index show edit update), param: :encrypted_id
+  resources :apps, only: %i(index show edit update), param: :receipt_number
 
   namespace :api, format: 'json' do
     namespace :v1 do

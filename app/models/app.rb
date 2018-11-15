@@ -6,6 +6,6 @@ class App < Product
 
 
   def to_param
-    encrypted_id
+    receipt_number 
   end
 end
