@@ -8,7 +8,7 @@ CSV.generate do |csv|
         app.receipt_number,
         app.title,
         app.team_name,
-        "https://voteapp2018.planningdev.com#{edit_app_path(app)}"
+        "https://voteapp2018.planningdev.com#{edit_app_path(app.receipt_number)}"
     ]
     csv << column_values
   end
