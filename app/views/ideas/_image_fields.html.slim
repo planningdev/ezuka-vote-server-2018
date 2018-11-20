@@ -1,0 +1,9 @@
+.nested-fields
+  .row
+    .col-sm-7
+      = f.hidden_field :image_cache
+      = f.file_field :image, class: 'form-control'
+    .col-sm-1
+      = link_to_remove_association '削除', f
+    .col-sm-4
+      = image_tag f.object.image.url, width: '100%' if f.object.image.present?

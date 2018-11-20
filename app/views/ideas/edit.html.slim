@@ -1,0 +1,42 @@
+.container.pt-5
+  = form_with model: @idea, local: true do |form|
+
+    - if @idea.errors.any?
+      .alert.alert-danger
+        ul
+          - @idea.errors.full_messages.each do |msg|
+            li =msg
+    .form-group
+      = form.label :team_name
+      = form.text_field :team_name, class: 'form-control',disabled: true
+    .form-group
+      = form.label :title
+      small
+        | (60文字以内)
+      = form.text_field :title, class: 'form-control'
+    .form-group
+      = form.label :description
+      small
+        | (400文字以内)
+      = form.text_area :description, class: 'form-control'
+    .from-group
+      .row
+        .col-sm-7
+          = form.label :square_image
+          small
+            | (正方形に切り取られます。)
+          = form.hidden_field :square_image_cache, class: 'form-control'
+          = form.file_field :square_image, class: 'form-control'
+        .col-sm-1
+        .col-sm-4
+          = image_tag form.object.square_image_url, width: '80%'
+    .form-group
+      = form.label :images
+      small
+        | (画像は4枚までです。)
+      = form.fields_for :images do |image_form|
+        = render 'image_fields', f: image_form
+      .field
+        = link_to_add_association '画像追加', form, :images, data: { associaltion_insertion_method: 'ideaend' }
+    .form-group.text-center
+      = form.submit class: 'btn btn-primary'

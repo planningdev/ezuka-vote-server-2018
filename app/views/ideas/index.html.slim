@@ -1,0 +1,26 @@
+.container-fluid
+  table.table
+    colgroup
+      col width=100
+      col width=400
+      col width=200
+      col width='auto'
+      col width=100
+      col width=50
+    thead
+      tr
+        td 受付番号
+        td アプリ名
+        td チーム名
+        td 概要
+        td 画像数
+        td
+    tbody
+      - @ideas.each do |idea|
+        tr
+          td = idea.receipt_number
+          td = idea.title
+          td = idea.team_name
+          td = idea.description
+          td = idea.images.size
+          td = link_to '編集', edit_idea_path(idea.receipt_number)
