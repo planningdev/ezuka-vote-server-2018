@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :apps, only: %i(index show edit update), param: :receipt_number
+  resources :apps, only: %i(index edit update), param: :receipt_number
+  resources :ideas, only: %i(index edit update), param: :receipt_number
 
   namespace :api, format: 'json' do
     namespace :v1 do
